@@ -1,0 +1,30 @@
+name: Bing-Images
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 4 * * *"
+
+jobs:
+  bingimages:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Command Install
+        run: sudo apt-get install wget
+
+      - name: Run Shell
+        if: ${{ success() }}
+        run: bash ./download.sh
+
+      - name: Commit
+        if: ${{ success() }}
+        run: |
+          git config --local user.name "${{ github.actor }}"
+          git config --local user.email "${{ github.actor }}@gmail.com"
+          git remote set-url origin https://${{ github.repository_owner }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git add -A
+          git commit -m "download new image"
+          git push
