@@ -3,7 +3,7 @@ name: Bing-Images
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 4 * * *"
+    - cron: "30 8 * * *"
 
 jobs:
   bingimages:
