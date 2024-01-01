@@ -5,7 +5,8 @@ Use GitHub Actions to automatically download bing images every day.
 
 ## Bing Today
 ![](https://github.com/iflycn/bingimages/blob/master/today.jpg)   
-[Get more images](https://github.com/iflycn/bingimages/tree/master/images), use of these images are restricted to wallpaper only.
+[Get more images](https://github.com/iflycn/bingimages/tree/master/images), use of these images are restricted to wallpaper only.  
+Or [click here](https://github.com/iflycn/bingimages/releases) to download more historical data.
 
 ## GitHub Docs
 - [https://docs.github.com/en/actions](https://docs.github.com/en/actions)
